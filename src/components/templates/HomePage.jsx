@@ -13,8 +13,8 @@ function HomePage() {
       const json = await res.json();
       console.log(json);
       setCoins(json);
+      setIsLoading(false);
     };
-    setIsLoading(false);
     fetchData();
   }, []);
 

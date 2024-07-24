@@ -8,11 +8,11 @@ import styles from "./TableCoin.module.css"
 function TableCoin({ coins, isLoading }) {
   console.log(coins);
   return (
-    <div className={StyleSheet.}>
+    <div className={styles.container}>
       {isLoading ? (
         <RotatingLines strokeColor="#5a5aff" strokeWidth="3" />
       ) : (
-        <table>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>Coin</th>
@@ -49,14 +49,14 @@ const TableRow = ({
   return (
     <tr>
       <td>
-        <div>
+        <div className={styles.symbol}>
           <img src={image} alt={name} />
           <span>{symbol.toUpperCase()}</span>
         </div>
       </td>
       <td>{name}</td>
       <td>${current_price.toLocaleString()}</td>
-      <td>{price_change.toFixed(2)}%</td>
+      <td className={price_change > 0 ? styles.success : styles.error}>{price_change.toFixed(2)}%</td>
       <td>${total_volume.toLocaleString()}</td>
       <td>
         <img src={price_change > 0 ? chartUp : chartDown} alt={name} />
