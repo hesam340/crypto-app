@@ -4,6 +4,7 @@ import { getCoinList } from "../../services/cryptoApi";
 
 import TableCoin from "../modules/TableCoin";
 import Pagination from "../modules/Pagination";
+import Search from "../modules/Search";
 
 function HomePage() {
   const [coins, setCoins] = useState([]);
@@ -24,6 +25,7 @@ function HomePage() {
 
   return (
     <div>
+      <Search />
       <TableCoin coins={coins} isLoading={isLoading} />
       <Pagination page={page} setPage={setPage} />
     </div>
