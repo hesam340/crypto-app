@@ -12,14 +12,15 @@ function HomePage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(getCoinList());
+      setIsLoading(true);
+      const res = await fetch(getCoinList(page));
       const json = await res.json();
       console.log(json);
       setCoins(json);
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [page]);
 
   return (
     <div>
