@@ -5,6 +5,7 @@ import { getCoinList } from "../../services/cryptoApi";
 import TableCoin from "../modules/TableCoin";
 import Pagination from "../modules/Pagination";
 import Search from "../modules/Search";
+import Chart from "../modules/Chart";
 
 function HomePage() {
   const [coins, setCoins] = useState([]);
@@ -30,6 +31,7 @@ function HomePage() {
 
   return (
     <div>
+      <Chart />
       <Search currency={currency} setCurrency={setCurrency} />
       <TableCoin coins={coins} isLoading={isLoading} />
       <Pagination page={page} setPage={setPage} />
