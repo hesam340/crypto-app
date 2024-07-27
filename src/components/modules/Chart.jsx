@@ -1,5 +1,7 @@
 import styles from "./Chart.module.css";
 
+import 
+
 function Chart({ chart, setChart }) {
   console.log(chart);
   return (
