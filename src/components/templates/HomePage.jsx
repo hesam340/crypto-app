@@ -12,6 +12,7 @@ function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [currency, setCurrency] = useState("usd");
+  const [chart, setChart] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +20,6 @@ function HomePage() {
         setIsLoading(true);
         const res = await fetch(getCoinList(page, currency));
         const json = await res.json();
-        console.log(json);
         setCoins(json);
         setIsLoading(false);
       } catch (error) {
@@ -31,10 +31,15 @@ function HomePage() {
 
   return (
     <div>
-      <Chart />
       <Search currency={currency} setCurrency={setCurrency} />
-      <TableCoin coins={coins} isLoading={isLoading} />
+      <TableCoin
+        coins={coins}
+        isLoading={isLoading}
+        currency={currency}
+        setChart={setChart}
+      />
       <Pagination page={page} setPage={setPage} />
+      {!!chart && <Chart chart={chart} setChart={setChart} />}
     </div>
   );
 }
