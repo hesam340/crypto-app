@@ -25,9 +25,68 @@
 .chart {
     width: 800px;
     padding: 20px;
-    background-color: #333333;
+    background-color: #252525ec;
     margin: auto;
     margin-top: 50px;
     border-radius: 20px;
     border: 2px solid #656565;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    margin: 0px 10px 30px;
+}
+
+.name img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.name p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.graph {
+    width: 760px;
+    height: 300px;
+}
+
+.types {
+    margin-top: 30px;
+}
+
+.types button {
+    background-color: inherit;
+    border: 1px solid #3874ff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.types .selected {
+    background-color: #3874ff;
+    color: #fff;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 30px 0px;
+}
+
+.details div {
+    display: flex;
+    font-size: 1.1rem;
+}
+
+.details p {
+    margin-right: 7px;
+    color: #3874ff;
+    font-weight: 700;
 }
